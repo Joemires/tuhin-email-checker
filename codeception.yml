@@ -1,0 +1,48 @@
+# suite config
+suites:
+    acceptance:
+        actor: AcceptanceTester
+        path: .
+        modules:
+            enabled:
+                - WebDriver:
+                    url: http://localhost
+                    host: 35.183.11.121
+                    browser: chrome
+                    capabilities:
+                        chromeOptions:
+                            args: [
+                                "--headless",
+                                "--disable-gpu",
+                                "user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36 SimaTerminal/567"
+                            ]
+                - \Helper\Acceptance
+                
+        # add Codeception\Step\Retry trait to AcceptanceTester to enable retries
+        step_decorators:
+            - Codeception\Step\ConditionalAssertion
+            - Codeception\Step\TryTo
+            - Codeception\Step\Retry
+                
+extensions:
+    enabled: 
+        - Codeception\Extension\RunFailed
+        - Codeception\Extension\RunProcess:
+            0: ssh -i tests/_data/selenium-server.pem ubuntu@ec2-35-183-11-121.ca-central-1.compute.amazonaws.com -o "StrictHostKeyChecking no" 'java -jar /www/selenium/selenium-server-standalone-3.9.1.jar -port 4444'
+
+params: 
+    - env
+
+gherkin: []    
+
+# additional paths
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+
+settings:
+    shuffle: false
+    lint: true
