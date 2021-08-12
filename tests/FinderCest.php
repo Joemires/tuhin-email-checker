@@ -29,6 +29,7 @@ class FinderCest
                 }
             } else {
                 $path = "EXIST";
+                unlink($path);
                 $I->amOnUrl('https://iforgot.apple.com/password/verify/appleid');
                 $I->fillField(["class" => "iforgot-apple-id"], 'joemires20@yandex.com');
                 $I->click('Continue');
@@ -40,7 +41,7 @@ class FinderCest
                     fwrite($file, "");
                     fclose($file);
                 } catch (Exception $e) {
-                    unlink($path);
+                    
                 }
             }
         }
