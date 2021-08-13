@@ -1,0 +1,35 @@
+Server Requirements
+1. Google Chrome 92.0.4515.131 (Version 92)
+2. Java Runtime (Believe it is auto installed on many linux systems) else (apt install default-jre)
+
+Usage Step
+ 1. Include AccountFinder.php class to your project
+ 2. Instantiate class
+ 3. Set required data
+ 4. Run check
+
+Method Usage
+1. setErrors(): 
+    This is used to set debugger to true, this helps track errors during execution
+
+2. yandex(email):
+    This method accepts a parameter strictly email address and will return -1 if argument is not of type email. This method sets all needed variables and check condition for yandex mail platform
+3. apple(email):
+    Same as yandex but this method sets neccessary condition check for apple account check
+
+4. run():
+    This method runs the email check process with returning any response to found or not found, ou use the check() method to know the status of the check
+
+5. check():
+    This method returns true or false if email is used or not used and -1 if email is invalid.
+    This method can also serve as a short tag to run() method. 
+
+All methods can be chained in the above order and check() must be chained last;
+
+A sample usage is explained in checker.php file
+
+Advice
+Selenium and chrome sits on the server I've added to this and this server is only meant for selenium and chrome development so for speed and less configuration I'll advice you point it to it or go with a cloud selenium SauceLabs, BrowserStack or TestingBot
+I'm providing you with this selenium environment for free tho compare to the cloud selenium environment proviers
+
+PHPBrowser has much limitation, selenium chrome drive automate a browser compare to PHPBrowser which has many gaps. If you prefer PHPBrowser, contact me to make changes

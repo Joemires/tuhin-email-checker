@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '87153785de2f8e342d13770c2d8756aa0d60ad7a',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '87153785de2f8e342d13770c2d8756aa0d60ad7a',
     ),
     'behat/gherkin' => 
     array (
@@ -143,15 +143,6 @@
       array (
       ),
       'reference' => '1dc8d9cba3897165e16d12bb13d813afb1eb3fe7',
-    ),
-    'monolog/monolog' => 
-    array (
-      'pretty_version' => '2.3.2',
-      'version' => '2.3.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '71312564759a7db5b789296369c1a264efc43aad',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -365,21 +356,11 @@
         0 => '1.0',
       ),
     ),
-    'psr/log' => 
-    array (
-      'pretty_version' => '1.1.4',
-      'version' => '1.1.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
-    ),
     'psr/log-implementation' => 
     array (
       'provided' => 
       array (
-        0 => '1.0.0',
-        1 => '1.0|2.0',
+        0 => '1.0|2.0',
       ),
     ),
     'ralouphie/getallheaders' => 

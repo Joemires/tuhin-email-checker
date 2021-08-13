@@ -5,9 +5,13 @@ suites:
         path: .
         modules:
             enabled:
+                # - PhpBrowser:
+                #     url: 'http://localhost'
+                #     curl:
+                #         CURLOPT_RETURNTRANSFER: true
                 - WebDriver:
                     url: http://localhost
-                    host: 35.183.11.121
+                    host: 35.183.11.121 #change to 127.0.0.1 to run from script
                     browser: chrome
                     capabilities:
                         chromeOptions:
@@ -28,7 +32,10 @@ extensions:
     enabled: 
         - Codeception\Extension\RunFailed
         - Codeception\Extension\RunProcess:
-            0: ssh -i tests/_data/selenium-server.pem ubuntu@ec2-35-183-11-121.ca-central-1.compute.amazonaws.com -o "StrictHostKeyChecking no" 'java -jar /www/selenium/selenium-server-standalone-3.9.1.jar -port 4444'
+            0: ssh -i tests/_data/selenium-server.pem ubuntu@ec2-35-183-11-121.ca-central-1.compute.amazonaws.com -o "StrictHostKeyChecking no" 'java -jar /www/selenium/selenium-server-standalone-3.9.1.jar -port 4444' # Remove this to run on own server
+            # 0: java -Dwebdriver.chrome.driver=tests/_data/chromedriver -jar tests/_data/selenium-server-standalone.jar # Uncomment this to run on own server
+            sleep: 5
+
 
 params: 
     - env

@@ -34,7 +34,7 @@ class FinderCest
                 // try {
                 // } catch (Exception $e) {
                     
-                }
+                // }
             }
         }
 
